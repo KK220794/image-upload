@@ -1,0 +1,47 @@
+<input type="file" (change)="fileChangeEvent($event)" />
+<div *ngIf="imageChangedEvent!==''" >
+<button (click)="rotateLeft()">Rotate left</button>
+<button (click)="rotateRight()">Rotate right</button>
+<button (click)="flipHorizontal()">Flip horizontal</button>
+<button (click)="flipVertical()">Flip vertical</button>
+</div>
+
+<div>
+  <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="1/1"
+      [resizeToWidth]="128"
+      [cropperMinWidth]="128"
+      [onlyScaleDown]="true"
+      [roundCropper]="false"
+      format="png"
+      outputType="base64"
+      (imageCropped)="imageCropped($event)"
+      (imageLoaded)="imageLoaded()"
+      (cropperReady)="cropperReady()"
+      (loadImageFailed)="loadImageFailed()"
+      [style.display]="showCropper ? null : 'none'"
+      [widthOfCropper]="300"
+      [heightOfCropper]="100"
+  ></image-cropper>
+</div>
+
+
+<div *ngIf="!selected.image"  fxFlex="1 0 auto" fxLayout="column">
+    <mat-grid-list cols="3" rowHeight="1:1.5" gutterSize="10px">
+        <mat-grid-tile *ngFor="let template of data; let i=index;"
+        (click)="onTemplateChange(i)"><img [src]="template.url"/></mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<!-- <div *ngFor="let item of data" >
+  <img [src]='item.url' alt='abc'>
+</div> -->
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button *ngIf="selected.image" mat-button [mat-dialog-close]="true" cdkFocusInitial>Upload</button>
+    <button *ngIf="selected.template"  mat-button [mat-dialog-close]="true" cdkFocusInitial>Select</button>
+</mat-dialog-actions>
+
+<p>{{ croppedImage }}</p>
