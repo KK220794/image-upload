@@ -338,7 +338,7 @@ export class ImageCropperComponent implements OnChanges {
         const diffY = this.getClientY(event) - this.moveStart.clientY;
 
         this.cropper.x1 = this.moveStart.x1 + diffX;
-        console.log(this.cropper.x1);
+        // console.log(this.cropper.x1);
         this.cropper.y1 = this.moveStart.y1 + diffY;
         this.cropper.x2 = this.moveStart.x2 + diffX;
         this.cropper.y2 = this.moveStart.y2 + diffY;

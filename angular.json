@@ -102,6 +102,86 @@
           }
         }
       }
+    },
+    "ng2-img-cropper": {
+      "root": "projects/ng2-img-cropper",
+      "sourceRoot": "projects/ng2-img-cropper/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng2-img-cropper/tsconfig.lib.json",
+            "project": "projects/ng2-img-cropper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng2-img-cropper/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng2-img-cropper/src/test.ts",
+            "tsConfig": "projects/ng2-img-cropper/tsconfig.spec.json",
+            "karmaConfig": "projects/ng2-img-cropper/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng2-img-cropper/tsconfig.lib.json",
+              "projects/ng2-img-cropper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "goBiggi-img-cropper": {
+      "root": "projects/go-biggi-img-cropper",
+      "sourceRoot": "projects/go-biggi-img-cropper/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/go-biggi-img-cropper/tsconfig.lib.json",
+            "project": "projects/go-biggi-img-cropper/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/go-biggi-img-cropper/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/go-biggi-img-cropper/src/test.ts",
+            "tsConfig": "projects/go-biggi-img-cropper/tsconfig.spec.json",
+            "karmaConfig": "projects/go-biggi-img-cropper/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/go-biggi-img-cropper/tsconfig.lib.json",
+              "projects/go-biggi-img-cropper/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "my-app"

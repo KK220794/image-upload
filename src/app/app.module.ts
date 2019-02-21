@@ -1,18 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { ImageCropperModule } from './image-cropper/image-cropper.module';
-
 import { AppComponent } from './app.component';
-import { ModalComponent } from './modal/modal.component';
 import { MatDialogModule, MatGridListModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2ImgCropperComponent } from './ng2-img-cropper/ng2-img-cropper.component';
+import { Ng2ImgCropperModule } from './ng2-img-cropper/ng2-img-cropper.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ImageCropperModule, MatDialogModule, 
-    BrowserAnimationsModule, MatGridListModule ],
-  declarations: [ AppComponent, ModalComponent ],
-  entryComponents: [ModalComponent],
+  imports:      [ BrowserModule, FormsModule, MatDialogModule, 
+  BrowserAnimationsModule, MatGridListModule, Ng2ImgCropperModule ],
+  declarations: [ AppComponent ],
   bootstrap:    [ AppComponent ],
   
 })

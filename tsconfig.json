@@ -16,6 +16,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng2-img-cropper": [
+        "dist/ng2-img-cropper"
+      ],
+      "ng2-img-cropper/*": [
+        "dist/ng2-img-cropper/*"
+      ],
+      "goBiggi-img-cropper": [
+        "dist/go-biggi-img-cropper"
+      ],
+      "goBiggi-img-cropper/*": [
+        "dist/go-biggi-img-cropper/*"
+      ]
+    }
   }
-  }
+}

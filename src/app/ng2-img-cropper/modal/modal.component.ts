@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { ImageCroppedEvent } from '../image-cropper/interfaces';
 import { ImageCropperComponent } from '../image-cropper/component/image-cropper.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Component, OnInit, ViewChild, Inject, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
@@ -17,6 +17,7 @@ export class ModalComponent implements OnInit {
     image : false,
     template: false
   };
+  
 
   @ViewChild(ImageCropperComponent) imageCropper: ImageCropperComponent;
 
@@ -27,7 +28,7 @@ export class ModalComponent implements OnInit {
   }
   imageCropped(event: ImageCroppedEvent) {
     this.croppedImage = event.base64;
-    console.log(event);
+    // console.log(event);
   }
   imageLoaded() {
     this.showCropper = true;
@@ -53,16 +54,17 @@ export class ModalComponent implements OnInit {
   }
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    console.log(this.data);
+    // console.log(this.data);
     
   }
   onTemplateChange(i) {
-    this.croppedImage = this.data[i].url;
+    this.croppedImage = i;
     this.selected.template= true;
     
   }
 
   ngOnInit() {
   }
+
 
 }

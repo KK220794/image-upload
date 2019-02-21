@@ -1,0 +1,1 @@
+export * from './src/app/ng2-img-cropper/ng2-img-cropper.module'

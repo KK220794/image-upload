@@ -1,2 +1,5 @@
-<button mat-button (click)="openDialog()">load image</button>
 
+<app-ng2-img-cropper [image]='imageURLs' 
+(croppedImage)="imageData($event)"
+[widthOfCropper]='300'
+[heightOfCropper]='100'></app-ng2-img-cropper>
